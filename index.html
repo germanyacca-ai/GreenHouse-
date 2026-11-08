@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свежие овощи в Волковыске | Теплица greenhous_bel</title>
+    <meta name="description" content="Свежие колючие огурцы и сахарные помидоры из собственной теплицы в Волковыске. Выращено с любовью и тяжелым трудом. Заказ через Instagram.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* --- БАЗОВЫЕ НАСТРОЙКИ --- */
+        :root {
+            --primary-green: #2E5A27;
+            --light-green: #5B8C51;
+            --bg-color: #F9F6F0;
+            --text-dark: #333333;
+            --text-light: #555555;
+            --accent-red: #D34B41;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- ШАПКА --- */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(249, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--light-green);
+        }
+
+        /* --- ГЛАВНЫЙ ЭКРАН --- */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1592419044706-39c4e982ce6b?q=80&w=2000&auto=format&fit=crop') center/cover;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: #fff;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .location-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(36px, 5vw, 64px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(46, 90, 39, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 90, 39, 0.6);
+        }
+
+        /* --- БЛОК О НАС --- */
+        .section {
+            padding: 100px 5%;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--light-green);
+            background: url('https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=800&auto=format&fit=crop') center/cover;
+            aspect-ratio: 4/5;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .about-text .highlight {
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 18px;
+            font-style: italic;
+            border-left: 4px solid var(--primary-green);
+            padding-left: 15px;
+            margin: 25px 0;
+        }
+
+        /* --- ПРОДУКЦИЯ --- */
+        .products {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--bg-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-red);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(211, 75, 65, 0.4);
+        }
+
+        .product-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #e0e0e0; /* Серый фон, если фото грузится */
+        }
+
+        .product-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .product-info ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .product-info ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .product-info ul li::before {
+            content: "✔";
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+            text-align: center;
+            background: transparent;
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-green);
+            color: #fff;
+        }
+
+        /* --- ПРЕИМУЩЕСТВА --- */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .features h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* --- ПРИЗЫВ К ДЕЙСТВИЮ (INSTAGRAM) --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green), #1a3616);
+            color: #fff;
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .insta-btn {
+            background: #fff;
+            color: var(--primary-green);
+            padding: 18px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+            font-weight: 600;
+        }
+
+        .insta-btn:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+
+        /* --- ПОДВАЛ --- */
+        footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ccc;
+        }
+
+        /* --- АДАПТИВ --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about { grid-template-columns: 1fr; }
+            .about-img { max-height: 400px; box-shadow: 10px 10px 0 var(--light-green); }
+            .hero { text-align: center; justify-content: center; }
+            .btn { width: 100%; margin-bottom: 10px; }
+            .section { padding: 60px 5%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🌿 greenhous_bel</div>
+        <div class="nav-links">
+            <a href="#about">О нас</a>
+            <a href="#products">Продукция</a>
+            <a href="#order">Заказать</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="location-badge">📍 Теплица и продажи в Волковыске</div>
+            <h1>Вкус детства, который пахнет летом</h1>
+            <p>Настоящие домашние огурцы с колючками и сахарные томаты прямо с куста. Выращены в Волковыске с любовью, потом и заботой.</p>
+            <a href="#products" class="btn btn-primary">Смотреть урожай</a>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="about">
+            <div class="about-img"></div>
+            <div class="about-text">
+                <h2>Мы не продаем овощи. Мы делимся урожаем.</h2>
+                <p class="highlight">«Чтобы в марте они выглядели так же, как в сентябре» — наш главный принцип.</p>
+                <p>Мы — семейная теплица в <strong>Волковыске</strong>. За каждым идеальным на вид овощем стоит наш ежедневный, тяжелый труд. Мы встаем с первыми лучами солнца, чтобы проверить влажность почвы и температуру. Мы знаем, как пахнет земля после дождя, и сколько сил нужно вложить в каждый куст, чтобы получить тот самый хрустящий урожай.</p>
+                <p>Здесь нет места автоматике и вредным ускорителям роста — только наши руки, мозоли, бессонные ночи в сезон и искренняя любовь к земле. Мы выращиваем это для себя и своих детей, а излишками с радостью делимся с вами.</p>
+                <a href="#order" class="btn btn-outline" style="margin-top: 10px;">Заказать свежий урожай</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section products" id="products">
+        <h2 class="section-title">Наш урожай</h2>
+        <p class="section-subtitle">Сорвано сегодня утром заботливыми руками. Доставлено к вашему столу.</p>
+        
+        <div class="product-grid">
+            
+            <!-- КАРТОЧКА ОГУРЦОВ (Исправлено фото) -->
+            <div class="product-card">
+                <div class="product-badge">Хит сезона!</div>
+                <!-- Фото: настоящие пупырчатые/колючие огурцы -->
+                <img src="https://images.unsplash.com/photo-1587411768638-ec71f8e33b78?q=80&w=800&auto=format&fit=crop" alt="Домашние колючие огурцы" class="product-img">
+                <div class="product-info">
+                    <h3>Домашние колючие огурчики</h3>
+                    <p>Забудьте о гладких «пластиковых» огурцах из супермаркета! Наши огурцы с настоящими пупырышками и колючками. Эти колючки — proof (доказательство) того, что огурец вырос в живой земле, набрался сил от солнца и впитал в себя труд хозяина. Они хрустят так, что слышно на соседней улице!</p>
+                    
+                    <ul>
+                        <li>Безумно хрустящие и ароматные</li>
+                        <li>Идеальны для свежих салатов</li>
+                        <li>Обожают хозяйки за идеальную засолку</li>
+                    </ul>
+
+                    <a href="https://www.instagram.com/greenhous_bel" target="_blank" class="btn btn-outline">Забрать свои огурцы</a>
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА ПОМИДОРОВ -->
+            <div class="product-card">
+                <div class="product-badge" style="background: #E8A320;">Сахарные</div>
+                <!-- Фото: мясистые домашние помидоры -->
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=800&auto=format&fit=crop" alt="Сладкие томаты" class="product-img">
+                <div class="product-info">
+                    <h3>Мясистые томаты</h3>
+                    <p>Помните вкус помидоров из детства, которые мы ели прямо с грядки, посыпав солью? Мы сохранили этот вкус. Наши томаты мясистые, сладкие и с тонкой кожицей. В них нет лишней воды — только настоящий томатный сок и аромат, взращенный нашими руками без химии.</p>
+                    
+                    <ul>
+                        <li>Сладкие даже без сахара</li>
+                        <li>Идеальны для салатов и соков</li>
+                        <li>Созревают на ветке, а не в ящиках</li>
+                    </ul>
+
+                    <a href="https://www.instagram.com/greenhous_bel" target="_blank" class="btn btn-outline">Заказать томаты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+                <h3>Круглый год</h3>
+                <p>Свежие овощи не зависят от сезона. Мы собираем урожай даже зимой, обогревая теплицу и не жалея сил.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🙌</div>
+                <h3>Труд с душой</h3>
+                <p>Никакой конвейерной бездушности. Мы знаем каждую грядку в лицо, ухаживаем вручную и вкладываем частичку души.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚗</div>
+                <h3>Рядом с вами</h3>
+                <p>Мы находимся в <strong>Волковыске</strong>. Быстрая связь, самовывоз или удобная доставка по городу.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="order">
+        <h2>Устали от безвкусных овощей?</h2>
+        <p>Верните на свой стол настоящий вкус! Все заказы мы принимаем в нашем Instagram. Там вы можете посмотреть свежие фото урожая, почитать отзывы и задать любые вопросы напрямую хозяину теплицы.</p>
+        <a href="https://www.instagram.com/greenhous_bel" target="_blank" class="insta-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            Перейти в Instagram для заказа
+        </a>
+    </section>
+
+    <footer>
+        <p><strong>Теплица и продажи в г. Волковыск, Беларусь</strong></p>
+        <p style="margin-top: 10px;">&copy; 2026 greenhous_bel. Выращено с любовью. Сайт создан в демонстрационных целях.</p>
+    </footer>
+
+</body>
+  </html>
